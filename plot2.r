@@ -1,10 +1,14 @@
- table<-read.csv("household_power_consumption.txt",sep=";",as.is = TRUE)
- table$Date<-as.Date(table$Date, "%d/%m/%Y")
+csv_file <- "household_power_consumption.txt"
+df <- read.csv(csv_file, header = TRUE, sep = ";", colClasses = "character")
 
- ElecTab<-table[(table[,1] == "2007-02-02" ) | (table[,1] == "2007-02-01" ), ]
- ElecTab[,3]<-as.numeric(ElecTab[,3])
- 
-  plot(ElecTab$Date,ElecTab$Global_active_power,ylab="Global Active Power ( kilowatts ) ",xlab="")
- dev.copy(png,file="plot2.png")
- dev.off()
- 
+date_as_Date <- as.Date(df$Date, format = "%d/%m/%Y")
+df <- df[date_as_Date == "2007-02-01" | date_as_Date == "2007-02-02",]
+
+active_power <- as.numeric(df$Global_active_power)
+
+vDateTimeString <- paste(df$Date, df$Time)
+vDateTime <- as.POSIXct(vDateTimeString, format = "%d/%m/%Y %H:%M:%S")
+
+png(file = "plot2.png")
+plot(vDateTime, active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
+dev.off()
