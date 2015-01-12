@@ -5,5 +5,5 @@
  ElecTab[,3]<-as.numeric(ElecTab[,3])
  
  hist(ElecTab[,3],col="red",xlab="Global Active Power ( kilowatts ) ",main="Global Active Power")
- dev.copy(png,file="plot1.png")
+ dev.copy(png,file="plot1.png") 
  dev.off()
