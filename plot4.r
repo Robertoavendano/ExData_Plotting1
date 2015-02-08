@@ -7,7 +7,7 @@ df <- df[date_as_Date == "2007-02-01" | date_as_Date == "2007-02-02",]
 active_power <- as.numeric(df$Global_active_power)
 
 subMetering1 <- as.numeric(df$Sub_metering_1)
-subMetering2 <- as.numeric(df$Sub_metering_2)
+subMetering2 <- as.numeric(df$Sub_metering_2) 
 subMetering3 <- as.numeric(df$Sub_metering_3)
 
 voltage <- as.numeric(df$Voltage)

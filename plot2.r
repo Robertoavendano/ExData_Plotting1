@@ -9,6 +9,6 @@ active_power <- as.numeric(df$Global_active_power)
 vDateTimeString <- paste(df$Date, df$Time)
 vDateTime <- as.POSIXct(vDateTimeString, format = "%d/%m/%Y %H:%M:%S")
 
-png(file = "plot2.png")
+png(file = "plot2.png")  
 plot(vDateTime, active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
 dev.off()
