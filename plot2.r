@@ -4,7 +4,7 @@ df <- read.csv(csv_file, header = TRUE, sep = ";", colClasses = "character")
 date_as_Date <- as.Date(df$Date, format = "%d/%m/%Y")
 df <- df[date_as_Date == "2007-02-01" | date_as_Date == "2007-02-02",]
  
-active_power <- as.numeric(df$Global_active_power)
+active_power <- as.numeric(df$Global_active_power)  
 
 vDateTimeString <- paste(df$Date, df$Time)
 vDateTime <- as.POSIXct(vDateTimeString, format = "%d/%m/%Y %H:%M:%S")

@@ -8,7 +8,7 @@ active_power <- as.numeric(df$Global_active_power)
 
 subMetering1 <- as.numeric(df$Sub_metering_1)
 subMetering2 <- as.numeric(df$Sub_metering_2) 
-subMetering3 <- as.numeric(df$Sub_metering_3)
+subMetering3 <- as.numeric(df$Sub_metering_3) 
 
 voltage <- as.numeric(df$Voltage)
 
