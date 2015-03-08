@@ -1,4 +1,4 @@
-csv_file <- "household_power_consumption.txt"
+csv_file <- "household_power_consumption.txt" 
 df <- read.csv(csv_file, header = TRUE, sep = ";", colClasses = "character")
 
 date_as_Date <- as.Date(df$Date, format = "%d/%m/%Y")
